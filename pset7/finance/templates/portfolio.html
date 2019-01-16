@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Stocks
+{% endblock %}
+
+{% block main %}
+<h1>Current Stock Portfolio</h1>
+</br>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Symbol</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Current Value</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stock in stocks %}
+    <tr>
+      <td> {{ stock.stockname }} </td>
+      <td> {{ stock.symbol }} </td>
+      <td> {{ stock.num }} </td>
+      <td> {{ stock.value }} </td>
+      <td> {{ stock.total }} </td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td>PORTFOLIO</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td> {{ portval }} </td>
+    </tr>
+    <tr>
+      <td>CASH</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td> {{ cashbal }} </td>
+    </tr>
+    <tr class="table-info">
+      <td>ASSETS</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td> {{ tassets }} </td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}

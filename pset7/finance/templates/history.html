@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Purchase History
+{% endblock %}
+
+{% block main %}
+  <h1>Transaction History</h1>
+  </br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Symbol</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Transacted</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for stock in stocks %}
+      <tr>
+        <td> {{ stock.stockname }} </td>
+        <td> {{ stock.symbol }} </td>
+        <td> {{ stock.numberofstocks }} </td>
+        <td> {{ stock.priceperstock }} </td>
+        <td> {{ stock.time }} </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

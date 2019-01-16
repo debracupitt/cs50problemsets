@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+  <h1>Buy Some Shares</h1>
+  </br>
+  <form action="/buy" method="post">
+      <div class="form-group">
+        <label for="quantity">Which stocks would you like to buy?</label><br>
+        <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Stock Symbol" type="text"/>
+      </div>
+      <div class="form-group">
+          <label for="quantity">How many stocks would you like to buy?</label><br>
+          <input class="form-control" name="shares" placeholder="Number" type="text"/>
+      </div>
+      <button class="btn btn-primary" type="submit">Buy Stocks</button>
+  </form>
+{% endblock %}
